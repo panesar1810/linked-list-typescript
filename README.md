@@ -2,7 +2,9 @@
 Simple linked-list implementation in typescript 
 
 Available methods
-* insert 
+```javascript
+insert(data: any);
+```
 * insertAt
 * insertAtLast
 * remove
