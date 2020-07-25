@@ -3,19 +3,19 @@ Simple linked-list implementation in typescript
 
 Available methods:
 ```javascript
-insert(data: any): void;
+insert(data: T): void;
 
-insertAt(data: any, index: number): void;
+insertAt(data: T, index: number): void;
 
-insertAtLast(data: any): void;
+insertAtLast(data: T): void;
 
 remove(index: number): void;
 
-get(index: number): any;
+get(index: number): T;
 
-toArray(): any[];
+toArray(): T[];
 
-toArrayReversed(): any[];
+toArrayReversed(): T[];
 
 length(): number;
 
@@ -25,4 +25,5 @@ consoleLog(): void;
 ```
 
 Any recommendations are appreciated.
+
 Email me at panesar.pb08@gmail.com
