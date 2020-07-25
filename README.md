@@ -3,9 +3,12 @@ Simple linked-list implementation in typescript
 
 Available methods
 * insert 
-* insertLast
+* insertAt
+* insertAtLast
 * remove
 * get
 * toArray
 * toArrayReversed
 * length
+* clear
+* consoleLog
