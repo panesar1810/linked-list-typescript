@@ -23,3 +23,6 @@ clear(): void;
 
 consoleLog(): void;
 ```
+
+Any recommendations are appreciated.
+Email me at panesar.pb08@gmail.com
