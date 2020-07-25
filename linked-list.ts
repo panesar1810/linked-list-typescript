@@ -1,25 +1,26 @@
-export class LinkedList {
-	private head: Node;
+export class LinkedList<T> {
+	private head: Node<T>;
 	private size: number;
 
 	constructor() {
 		this.head = null;
 		this.size = 0;
 	}
-	
+
 	// returns length of list
 	get length(): number { return this.size; }
 
 	// insert a node at first
-	insert(data: any): void {
+	insert(data: T): void {
 		this.head = new Node(data, this.head);
 		this.size++;
 	}
 
 	// insert a node at last
-	insertAtLast(data: any): void {
-		const node: Node = new Node(data);
-		let current: Node;
+	insertAtLast(data: T): void {
+		const node: Node<T> = new Node(data);
+		let current: Node<T>;
+		
 		if (!this.head) { 
 			this.head = node;
 		} else {
@@ -34,15 +35,15 @@ export class LinkedList {
 	}
 	
 	// insert a node at specific index
-	insertAt(data: any, index: number): void {
+	insertAt(data: T, index: number): void {
 		if (index > 0 && index > this.size) {
 			throw Error('Index is out of range');
 		} else if (index === 0) {
 			this.insert(data);
 			return;
 		} else {
-			const node: Node = new Node(data);
-			let current: Node = this.head, previous: Node, count = 0;
+			const node: Node<T> = new Node(data);
+			let current: Node<T> = this.head, previous: Node<T>, count = 0;
 
 			while (count < index) {
 				previous = current;
@@ -56,8 +57,8 @@ export class LinkedList {
 	}
 	
 	// returns a node at specific index
-	get(index: number): any {
-		let current: Node = this.head;
+	get(index: number): T {
+		let current: Node<T> = this.head;
 		let count: number;
 
 		while (current) {
@@ -73,7 +74,7 @@ export class LinkedList {
 		if (index > 0 && index > this.size) {
 			throw Error('Index is out of range');
 		}
-		let current: Node = this.head, previous: Node, count = 0;
+		let current: Node<T> = this.head, previous: Node<T>, count = 0;
 
 		if (index === 0) {
 			this.head = current.next;
@@ -95,7 +96,7 @@ export class LinkedList {
 	}
 	
 	// reverse the list
-	private reverse(head: Node): Node {
+	private reverse(head: Node<T>): Node<T> {
 		if (!head || !head.next) {
 		  return head;
 		}
@@ -106,9 +107,9 @@ export class LinkedList {
 	}
 
 	// converts to array but reversed
-	toArrayReversed(): any[] {
-		let array: any[] = [];
-		let reversedHead: Node = this.reverse(this.head);
+	toArrayReversed(): T[] {
+		let array: T[] = [];
+		let reversedHead: Node<T> = this.reverse(this.head);
 
 		while (reversedHead) {
 			array.push(reversedHead.data);
@@ -118,9 +119,9 @@ export class LinkedList {
 	}
 
 	// converts to an array
-	toArray(): any[] {
-		let array: any[] = [];
-		let current: Node = this.head;
+	toArray(): T[] {
+		let array: T[] = [];
+		let current: Node<T> = this.head;
 
 		while (current) {
 			array.push(current.data);
@@ -131,7 +132,7 @@ export class LinkedList {
 	
 	// print the list
 	consoleLog(): void {
-		let current: Node = this.head;
+		let current: Node<T> = this.head;
 		while (current) {
 			console.log(current.data);
 			current = current.next;
@@ -140,10 +141,10 @@ export class LinkedList {
 
 }
 
-class Node {
+class Node<T> {
 	constructor(
-		public data: any, 
-		public next: Node = null
+		public data: T, 
+		public next: Node<T> = null
 	) {
 		this.data = data;
 		this.next = next;
