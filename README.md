@@ -2,10 +2,10 @@
 Simple linked-list implementation in typescript 
 
 Available methods
--- insert 
--- insertLast
--- remove
--- get
--- toArray
--- toArrayReversed
--- length
+* insert 
+* insertLast
+* remove
+* get
+* toArray
+* toArrayReversed
+* length
