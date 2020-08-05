@@ -129,6 +129,18 @@ export class LinkedList<T> {
 		}
 		return array;
 	}
+
+	forEach(callback): void {
+		if (!this.head) 
+			throw Error('List is empty');
+		else {
+			let head = this.head;
+			while (head) {
+				callback(head.data);
+				head = head.next;
+			}
+		}
+	}
 	
 	// print the list
 	consoleLog(): void {
