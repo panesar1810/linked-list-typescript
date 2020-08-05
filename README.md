@@ -21,6 +21,8 @@ length(): number;
 
 clear(): void;
 
+forEach(): void;
+
 consoleLog(): void;
 ```
 
